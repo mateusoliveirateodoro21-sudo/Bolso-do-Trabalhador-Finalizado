@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#FFD400"/>
+<rect x="60" y="60" width="1080" height="510" rx="36" fill="#fff" stroke="#111" stroke-width="6"/>
+<g transform="translate(120 150) scale(3.2)">
+<rect width="64" height="64" rx="14" fill="#FFD400"/>
+<circle cx="32" cy="22" r="13" fill="#fff" stroke="#111" stroke-width="3"/>
+<path d="M32 27V15M26.5 20.5 32 15l5.5 5.5" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 30h46v12a12 12 0 0 1-12 12H21A12 12 0 0 1 9 42z" fill="#111"/>
+<path d="M16 37h32" stroke="#FFD400" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<text x="370" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="84" font-weight="800" fill="#111" letter-spacing="-2">Bolso do</text>
+<text x="370" y="350" font-family="Helvetica Neue, Arial, sans-serif" font-size="96" font-weight="800" fill="#111" letter-spacing="-3">Trabalhador</text>
+<text x="124" y="500" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="600" fill="#333">Salário líquido, 13º, férias e hora extra: a conta explicada.</text>
+</svg>

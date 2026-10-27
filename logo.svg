@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" role="img" aria-label="Bolso do Trabalhador">
+<rect width="520" height="96" fill="#fff"/>
+<g transform="translate(8 8) scale(1.25)">
+<rect width="64" height="64" rx="14" fill="#FFD400"/>
+<circle cx="32" cy="22" r="13" fill="#fff" stroke="#111" stroke-width="3"/>
+<path d="M32 27V15M26.5 20.5 32 15l5.5 5.5" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 30h46v12a12 12 0 0 1-12 12H21A12 12 0 0 1 9 42z" fill="#111"/>
+<path d="M16 37h32" stroke="#FFD400" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<text x="100" y="44" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="800" fill="#111" letter-spacing="-0.5">Bolso do</text>
+<text x="100" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="800" fill="#111" letter-spacing="-1">Trabalhador</text>
+<rect x="100" y="84" width="150" height="5" rx="2.5" fill="#FFD400"/>
+</svg>
