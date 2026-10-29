@@ -13,14 +13,17 @@ hora:function(){var h=v("sal")/v("div");return{h50:h*1.5,h100:h*2,hora:h}},
 ferias:function(){var b=v("sal")+v("med"),f=b/30*v("dias"),t=f/3,a=v("dias")==20?b/30*10*4/3:0,g=f+t,l=liq(g,v("dep"));return{fer:f,terco:t,abono:a,inss:l.i,ir:l.ir,tot:g+a-l.i-l.ir}},
 decimo:function(){var b=(v("sal")+v("med"))*Math.min(12,v("m"))/12,i=inss(b),ir=irrf(b,Math.max(0,b-i-v("dep")*189.59)),p=b/2;return{bruto:b,p1:p,inss:i,ir:ir,p2:b-p-i-ir,tot:b-i-ir}},
 liquido:function(){var s=v("sal"),g=s+v("ext"),l=liq(g,v("dep")),t=v("vt")==1?s*.06:0,o=v("out");return{bruto:g,inss:l.i,ir:l.ir,vt:t,out:o,tot:g-l.i-l.ir-t-o}},
+seguro:function(){var m=(v("s1")+v("s2")+v("s3"))/3,p;if(m<=2222.17)p=m*.8;else if(m<=3703.99)p=1777.74+(m-2222.17)*.5;else p=2518.65;p=Math.min(2518.65,Math.max(1621,p));
+var sl=v("sol"),mt=Math.floor(v("mt")),n=0;if(sl==1)n=mt>=24?5:mt>=12?4:0;else if(sl==2)n=mt>=24?5:mt>=12?4:mt>=9?3:0;else n=mt>=24?5:mt>=12?4:mt>=6?3:0;
+return{ok:n>0?"Sim, pelos meses trabalhados":"Não, faltam meses de trabalho",media:m,parc:p,n:n,tot:p*n}},
 rescisao:function(){var sal=v("sal"),base=sal+v("med"),a=pd("adm"),d=pd("dem"),tp=v("tp"),av=v("av"),dep=v("dep");
 var y=d.getFullYear()-a.getFullYear();if(d<new Date(a.getFullYear()+y,a.getMonth(),a.getDate()))y--;y=Math.max(0,y);
 var bd=Math.min(90,30+3*y),pj=0;if(av==1&&tp==1)pj=bd;else if(av==1&&tp==3)pj=bd/2;
 var vi=base/30*pj,dd=(tp==2&&av==2)?base:0,pf=new Date(d.getFullYear(),d.getMonth(),d.getDate()+Math.ceil(pj)),n13=0,avf=0;
-if(tp!=4){var m=pf.getMonth()+(pf.getDate()>=15?1:0),sm=a.getFullYear()==pf.getFullYear()?a.getMonth()+(a.getDate()<=16?0:1):0;n13=Math.max(0,Math.min(12,m-sm));
-var yy=pf.getFullYear()-a.getFullYear(),st=new Date(a.getFullYear()+yy,a.getMonth(),a.getDate());if(st>pf){yy--;st=new Date(a.getFullYear()+yy,a.getMonth(),a.getDate())}
+if(tp!=4){var sm=a.getFullYear()==d.getFullYear()?a.getMonth()+(a.getDate()<=16?0:1):0,e1=d.getFullYear()==pf.getFullYear()?pf.getMonth()+(pf.getDate()>=15?1:0):12;n13=Math.max(0,e1-sm);if(pf.getFullYear()>d.getFullYear())n13+=pf.getMonth()+(pf.getDate()>=15?1:0);
+var yy=d.getFullYear()-a.getFullYear(),st=new Date(a.getFullYear()+yy,a.getMonth(),a.getDate());if(st>d){yy--;st=new Date(a.getFullYear()+yy,a.getMonth(),a.getDate())}
 var mm=(pf.getFullYear()-st.getFullYear())*12+pf.getMonth()-st.getMonth(),s2=new Date(st.getFullYear(),st.getMonth()+mm,st.getDate());if(s2>pf){mm--;s2=new Date(st.getFullYear(),st.getMonth()+mm,st.getDate())}
-if(Math.round((pf-s2)/864e5)+1>=15)mm++;avf=Math.max(0,Math.min(12,mm))}
+if(Math.round((pf-s2)/864e5)+1>=15)mm++;avf=Math.max(0,mm)}
 var saldo=sal/30*Math.min(d.getDate(),30),dec=base/12*n13,fer=base/12*avf*4/3+(v("fv")==1?base*4/3:0);
 var i1=inss(saldo),i2=inss(dec),ir1=irrf(saldo,Math.max(0,saldo-Math.max(i1+dep*189.59,607.2))),ir2=irrf(dec,Math.max(0,dec-i2-dep*189.59));
 var dp=.08*(saldo+dec+vi),pc=tp==1?.4:tp==3?.2:0,sq=tp==1?1:tp==3?.8:0;
@@ -36,6 +39,6 @@ var t=document.querySelector(".total");L.push(t.children[0].textContent+": "+t.c
 w.href="https://wa.me/?text="+L.map(encodeURIComponent).join("%0A")}
 var k=document.body.getAttribute("data-calc");if(!k)return;
 function run(){var r=C[k]();Object.keys(r).forEach(function(i){var e=document.getElementById("o-"+i);
-var f=e.getAttribute("data-f");e.textContent=f=="h"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" h":f=="d"?Math.ceil(r[i])+" dias":f=="a"?r[i]+"/12":F.format(r[i])});share()}
+var f=e.getAttribute("data-f");e.textContent=typeof r[i]=="string"?r[i]:f=="p"?r[i]+" parcelas":f=="h"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" h":f=="d"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" dias":f=="a"?r[i]+"/12":F.format(r[i])});share()}
 Array.prototype.forEach.call(document.querySelectorAll("input,select"),function(e){e.addEventListener("input",run)});run();var pb=document.getElementById("pr");if(pb)pb.addEventListener("click",function(){window.print()});
 })();
