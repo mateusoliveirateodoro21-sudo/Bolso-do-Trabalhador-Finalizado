@@ -13,7 +13,6 @@ hora:function(){var h=v("sal")/v("div");return{h50:h*1.5,h100:h*2,hora:h}},
 ferias:function(){var b=v("sal")+v("med"),f=b/30*v("dias"),t=f/3,a=v("dias")==20?b/30*10*4/3:0,g=f+t,l=liq(g,v("dep"));return{fer:f,terco:t,abono:a,inss:l.i,ir:l.ir,tot:g+a-l.i-l.ir}},
 decimo:function(){var b=(v("sal")+v("med"))*Math.min(12,v("m"))/12,i=inss(b),ir=irrf(b,Math.max(0,b-i-v("dep")*189.59)),p=b/2;return{bruto:b,p1:p,inss:i,ir:ir,p2:b-p-i-ir,tot:b-i-ir}},
 liquido:function(){var s=v("sal"),g=s+v("ext"),l=liq(g,v("dep")),t=v("vt")==1?s*.06:0,o=v("out");return{bruto:g,inss:l.i,ir:l.ir,vt:t,out:o,tot:g-l.i-l.ir-t-o}},
-equilibrio:function(){var f=v("fixos"),p=v("preco"),c=v("variavel"),m=p-c;if(p<=0||m<=0)return{marg:m,qtd:"Revise o preço ou o custo: cada venda dá prejuízo",tot:0};var q=Math.ceil(f/m);return{marg:m,qtd:q,tot:q*p}},
 seguro:function(){var m=(v("s1")+v("s2")+v("s3"))/3,p;if(m<=2222.17)p=m*.8;else if(m<=3703.99)p=1777.74+(m-2222.17)*.5;else p=2518.65;p=Math.min(2518.65,Math.max(1621,p));
 var sl=v("sol"),mt=Math.floor(v("mt")),n=0;if(sl==1)n=mt>=24?5:mt>=12?4:0;else if(sl==2)n=mt>=24?5:mt>=12?4:mt>=9?3:0;else n=mt>=24?5:mt>=12?4:mt>=6?3:0;
 return{ok:n>0?"Sim, pelos meses trabalhados":"Não, faltam meses de trabalho",media:m,parc:p,n:n,tot:p*n}},
@@ -40,6 +39,6 @@ var t=document.querySelector(".total");L.push(t.children[0].textContent+": "+t.c
 w.href="https://wa.me/?text="+L.map(encodeURIComponent).join("%0A")}
 var k=document.body.getAttribute("data-calc");if(!k)return;
 function run(){var r=C[k]();Object.keys(r).forEach(function(i){var e=document.getElementById("o-"+i);
-var f=e.getAttribute("data-f");e.textContent=typeof r[i]=="string"?r[i]:f=="p"?r[i]+" parcelas":f=="u"?r[i]+(r[i]==1?" unidade":" unidades"):f=="h"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" h":f=="d"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" dias":f=="a"?r[i]+"/12":F.format(r[i])});share()}
+var f=e.getAttribute("data-f");e.textContent=typeof r[i]=="string"?r[i]:f=="p"?r[i]+" parcelas":f=="h"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" h":f=="d"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" dias":f=="a"?r[i]+"/12":F.format(r[i])});share()}
 Array.prototype.forEach.call(document.querySelectorAll("input,select"),function(e){e.addEventListener("input",run)});run();var pb=document.getElementById("pr");if(pb)pb.addEventListener("click",function(){window.print()});
 })();

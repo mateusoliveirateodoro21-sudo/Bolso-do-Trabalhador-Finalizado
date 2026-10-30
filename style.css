@@ -30,14 +30,7 @@ footer{border-top:1.5px solid var(--ln);margin-top:36px;padding:20px 0 30px;font
 .btn{font:inherit;font-size:14px;font-weight:700;padding:9px 14px;border-radius:10px;border:1.5px solid var(--ink);background:var(--sun);color:#111;text-decoration:none;cursor:pointer;display:inline-block}
 .btn.alt{background:transparent;color:var(--ink)}.btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
 .cards.rel{grid-template-columns:1fr 1fr}@media(max-width:560px){.cards.rel{grid-template-columns:1fr}}
-@media print{header,footer,.ad,.acts,.cards,nav,div.t,main>h2,main>.aviso,.indica{display:none}.calc{box-shadow:none}body{background:#fff;color:#000}}
-.trilha{list-style:none;padding:0;margin:16px 0;counter-reset:p}
-.trilha li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-top:1.5px solid var(--ln)}
-.trilha li:last-child{border-bottom:1.5px solid var(--ln)}
-.trilha li::before{content:counter(p);width:44px;height:44px;border-radius:12px;background:var(--sun);color:#111;display:grid;place-items:center;font-weight:800;font-size:1.2rem;border:1.5px solid var(--ink)}
-.trilha h3{margin:0 0 2px;font-size:1.05rem}.trilha p{margin:0;color:var(--mut);font-size:15px}
-.soon{display:inline-block;background:var(--ln);color:var(--ink);font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:middle}
-.aviso{border-left:6px solid var(--sun);background:var(--sf);border-radius:0 12px 12px 0;padding:14px 16px;margin:20px 0;font-size:15px}
+@media print{header,footer,.ad,.acts,.cards,nav,div.t,main>h2,.indica{display:none}.calc{box-shadow:none}body{background:#fff;color:#000}}
 .indica{border:1.5px dashed var(--ln);background:var(--sf);border-radius:12px;padding:12px 14px;margin:20px 0;font-size:15px}
 .indica .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
 .indica p{margin:0 0 4px}.indica small{color:var(--mut);display:block;font-size:14px}.indica .disc{font-size:12px;color:var(--mut);margin:6px 0 0}
