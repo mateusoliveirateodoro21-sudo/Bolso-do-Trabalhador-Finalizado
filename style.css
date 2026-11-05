@@ -33,7 +33,10 @@ footer{border-top:1.5px solid var(--ln);margin-top:36px;padding:20px 0 30px;font
 @media print{header,footer,.ad,.acts,.cards,nav,div.t,main>h2,.indica{display:none}.calc{box-shadow:none}body{background:#fff;color:#000}}
 .indica{border:1.5px dashed var(--ln);background:var(--sf);border-radius:12px;padding:12px 14px;margin:20px 0;font-size:15px}
 .indica .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
-.indica p{margin:0 0 4px}.indica small{color:var(--mut);display:block;font-size:14px}.indica .disc{font-size:12px;color:var(--mut);margin:6px 0 0}
+.ind-row{display:flex;gap:14px;align-items:center}
+.ind-img{flex:none;width:84px;height:84px;border-radius:10px;border:1.5px solid var(--ln);display:grid;place-items:center;background:#fff;overflow:hidden}
+.ind-img img{max-width:100%;max-height:100%;object-fit:contain;display:block}.ind-img .ic{width:100%;height:100%;border-radius:0;margin:0}.ind-img .ic svg{width:34px;height:34px}
+.ind-txt{min-width:0}.indica p{margin:0 0 4px}.indica small{color:var(--mut);display:block;font-size:14px}.indica .disc{font-size:12px;color:var(--mut);margin:6px 0 0}
 .meta{color:var(--mut);font-size:14px;margin:0 0 4px}.t li{margin-bottom:6px}.t h1{margin-top:4px}
 .logo svg{width:36px;height:36px;flex:none}
 .cards{grid-template-columns:repeat(3,1fr)}
