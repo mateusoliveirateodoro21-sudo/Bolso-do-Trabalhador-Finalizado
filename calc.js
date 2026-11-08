@@ -16,7 +16,7 @@ liquido:function(){var s=v("sal"),g=s+v("ext"),l=liq(g,v("dep")),t=v("vt")==1?s*
 seguro:function(){var m=(v("s1")+v("s2")+v("s3"))/3,p;if(m<=2222.17)p=m*.8;else if(m<=3703.99)p=1777.74+(m-2222.17)*.5;else p=2518.65;p=Math.min(2518.65,Math.max(1621,p));
 var sl=v("sol"),mt=Math.floor(v("mt")),n=0;if(sl==1)n=mt>=24?5:mt>=12?4:0;else if(sl==2)n=mt>=24?5:mt>=12?4:mt>=9?3:0;else n=mt>=24?5:mt>=12?4:mt>=6?3:0;
 return{ok:n>0?"Sim, pelos meses trabalhados":"Não, faltam meses de trabalho",media:m,parc:p,n:n,tot:p*n}},
-media:function(){var n=v("per"),a=[],i;for(i=1;i<=n;i++)a.push(v("m"+i));var t=a.reduce(function(x,y){return x+y},0),m=t/n;return{n:n+" meses (do mais recente para trás)",soma:t,max:Math.max.apply(null,a),min:Math.min.apply(null,a),ter:m/3,tot:m}},
+media:function(){var n=v("per"),a=[],i,e,l;for(i=1;i<=12;i++){e=document.getElementById("m"+i);l=document.querySelector("label[for=m"+i+"]");e.style.display=l.style.display=i>n?"none":"";if(i<=n)a.push(v("m"+i))}var t=a.reduce(function(x,y){return x+y},0),m=t/n;return{n:n+(n==1?" mês (o mais recente)":" meses (do mais recente para trás)"),soma:t,max:Math.max.apply(null,a),min:Math.min.apply(null,a),ter:m/3,tot:m}},
 rescisao:function(){var sal=v("sal"),base=sal+v("med"),a=pd("adm"),d=pd("dem"),tp=v("tp"),av=v("av"),dep=v("dep");
 var y=d.getFullYear()-a.getFullYear();if(d<new Date(a.getFullYear()+y,a.getMonth(),a.getDate()))y--;y=Math.max(0,y);
 var bd=Math.min(90,30+3*y),pj=0;if(av==1&&tp==1)pj=bd;else if(av==1&&tp==3)pj=bd/2;
