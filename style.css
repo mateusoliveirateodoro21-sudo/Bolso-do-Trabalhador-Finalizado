@@ -67,7 +67,7 @@ header{position:sticky;top:0;z-index:30;background:var(--bg);margin:0 -20px;padd
 .mb summary{list-style:none;cursor:pointer;font-weight:800;font-size:15px;padding:8px 14px;border:1.5px solid var(--ink);border-radius:10px;background:var(--sun);color:#111;display:inline-flex;gap:8px;align-items:center}
 .mb summary::-webkit-details-marker{display:none}
 .mb summary i{width:16px;height:12px;display:inline-block;background:linear-gradient(#111 0 0) 0 0/100% 2px no-repeat,linear-gradient(#111 0 0) 0 50%/100% 2px no-repeat,linear-gradient(#111 0 0) 0 100%/100% 2px no-repeat}
-.mb[open] summary{box-shadow:3px 3px 0 var(--ink)}
+.mb details[open] summary{box-shadow:3px 3px 0 var(--ink)}
 .mp{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 40px));max-height:75vh;overflow:auto;background:var(--sf);border:1.5px solid var(--ink);border-radius:14px;padding:10px;box-shadow:6px 6px 0 var(--sun)}
 .mp h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:10px 8px 4px}
 .mp a{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
