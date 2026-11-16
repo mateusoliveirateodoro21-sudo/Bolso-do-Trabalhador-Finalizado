@@ -156,7 +156,7 @@ const ITENS = [
     var linhas = top.slice(0, 3).map(function (x) { return x.it.e + " " + NUM.format(qtd[x.it.id]) + "× " + x.it.n; }).join("\n");
     var txt = "🎰 Gastei " + BRL.format(g) + " do prêmio (estimado) da Mega da Virada!\n" +
       (linhas ? linhas + "\n" : "") + (s === 0 ? "💸 Zerei o saldo!\n" : "💰 Sobraram " + BRL.format(s) + "\n") +
-      "Jogo de brincadeira. Tente você 👉 " + URL_SITE;
+      "Jogo de brincadeira. Tente você 👉 " + URL_SITE + "?utm_source=whatsapp&utm_medium=share";
     window.open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank", "noopener");
   }
 

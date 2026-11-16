@@ -173,7 +173,7 @@ function zap(){
   if(!ultimo.h) return;
   var t = "⏰ Descobri quanto do meu trabalho custa isso!\n"+
     "🛒 "+ultimo.nome+" ("+F.format(ultimo.preco)+") = "+horasTxt(ultimo.h)+" de trabalho"+(ultimo.d>=1?" (~"+N1.format(Math.round(ultimo.d*10)/10)+" dias)":"")+" 😅\n"+
-    "👉 Calcule o seu: "+URL_SITE;
+    "👉 Calcule o seu: "+URL_SITE+"?utm_source=whatsapp&utm_medium=share";
   window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank","noopener");
 }
 function zapLista(){
@@ -181,7 +181,7 @@ function zapLista(){
   var tot=0; produtos.forEach(function(x){tot+=x.preco});
   var h=tot/p.hora,d=h/p.dia;
   var t="📋 Minhas contas custam "+horasTxt(h)+" de trabalho (~"+N1.format(Math.round(d*10)/10)+" dias) 😮\n"+
-    "👉 Calcule o seu: "+URL_SITE;
+    "👉 Calcule o seu: "+URL_SITE+"?utm_source=whatsapp&utm_medium=share";
   window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank","noopener");
 }
 function montaExemplos(){

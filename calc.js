@@ -34,10 +34,11 @@ bombeiro:function(){var p=v("sal")*v("pp")/100,h=(v("sal")+p)/v("div"),k=v("red"
 policial:function(){var h=v("sal")/v("esc"),k=v("red")==1?60/52.5:1,n=h*v("pn")/100*v("hn")*v("pl")*k,e=h*(1+v("pe")/100)*v("he");return{hm:v("esc"),hora:h,not:n,he:e,tot:n+e}},
 servidor:function(){var h=v("base")/v("div"),k=v("red")==1?60/52.5:1,pe=v("pe")/100,pn=v("pn")/100,a=h*(1+pe)*v("hed"),b=h*pn*v("hn")*k,c=h*(1+pe)*(1+pn)*v("hen")*k;return{hora:h,hed:a,adn:b,hen:c,tot:a+b+c}}
 };
-function share(){var w=document.getElementById("wa");if(!w)return;var L=[document.querySelector("h1").textContent],d=document.querySelectorAll("dl dt"),e=document.querySelectorAll("dl dd");
-for(var i=0;i<d.length;i++)L.push(d[i].textContent+": "+e[i].textContent);
-var t=document.querySelector(".total");L.push(t.children[0].textContent+": "+t.children[1].textContent);L.push("");L.push("Calcule o seu: "+location.href.split("#")[0]);
-w.href="https://wa.me/?text="+L.map(encodeURIComponent).join("%0A")}
+function share(){var w=document.getElementById("wa");if(!w)return;var h=document.querySelector("h1").textContent.trim(),c=document.querySelector('link[rel=canonical]'),u=(c?c.href:location.href.split(/[?#]/)[0])+"?utm_source=whatsapp&utm_medium=share",t=document.querySelector(".total"),L=["🧮 *"+h+"*",""];
+if(t){var tv=t.children[1].textContent.trim();if(tv&&tv!="–")L.push("💰 "+t.children[0].textContent.trim()+": *"+tv+"*")}
+var d=document.querySelectorAll("dl dt"),e=document.querySelectorAll("dl dd"),n=0;for(var i=0;i<d.length&&n<4;i++){var x=e[i].textContent.trim();if(!x||x=="–"||/^-?R\$\s?0,00$/.test(x)||e[i].offsetParent===null)continue;L.push("• "+d[i].textContent.trim()+": "+x);n++}
+L.push("");L.push("Resultado estimado.");L.push("👉 Faça a sua conta grátis: "+u);
+w.href="https://wa.me/?text="+encodeURIComponent(L.join("\n"))}
 var k=document.body.getAttribute("data-calc");if(!k)return;
 function run(){var r=C[k]();Object.keys(r).forEach(function(i){var e=document.getElementById("o-"+i);
 var f=e.getAttribute("data-f");e.textContent=typeof r[i]=="string"?r[i]:f=="p"?r[i]+" parcelas":f=="h"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" h":f=="d"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" dias":f=="a"?r[i]+"/12":F.format(r[i])});share()}
