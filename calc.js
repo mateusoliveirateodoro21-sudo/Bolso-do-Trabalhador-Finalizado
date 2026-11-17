@@ -1,6 +1,6 @@
 (function(){
 var F=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"});
-function v(i){return parseFloat(document.getElementById(i).value)||0}
+function v(i){var e=document.getElementById(i);return e?parseFloat(e.value)||0:0}
 function inss(b){var t=[[1621,.075],[2902.84,.09],[4354.27,.12],[8475.55,.14]],p=0,r=0;t.forEach(function(x){var u=Math.min(b,x[0]);if(u>p)r+=(u-p)*x[1];p=x[0]});return r}
 function irrf(rend,base){var a=0,d=0;if(base>4664.68){a=.275;d=908.73}else if(base>3751.05){a=.225;d=675.49}else if(base>2826.65){a=.15;d=394.16}else if(base>2428.8){a=.075;d=182.16}
 var t=Math.max(0,base*a-d),r=0;if(rend<=5000)r=Math.min(312.89,t);else if(rend<=7350)r=Math.min(t,Math.max(0,978.62-.133145*rend));return Math.max(0,t-r)}
@@ -40,7 +40,7 @@ var d=document.querySelectorAll("dl dt"),e=document.querySelectorAll("dl dd"),n=
 L.push("");L.push("Resultado estimado.");L.push("👉 Faça a sua conta grátis: "+u);
 w.href="https://wa.me/?text="+encodeURIComponent(L.join("\n"))}
 var k=document.body.getAttribute("data-calc");if(!k)return;
-function run(){var r=C[k]();Object.keys(r).forEach(function(i){var e=document.getElementById("o-"+i);
+function run(){var r=C[k]();Object.keys(r).forEach(function(i){var e=document.getElementById("o-"+i);if(!e)return;
 var f=e.getAttribute("data-f");e.textContent=typeof r[i]=="string"?r[i]:f=="p"?r[i]+" parcelas":f=="h"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" h":f=="d"?r[i].toLocaleString("pt-BR",{maximumFractionDigits:1})+" dias":f=="a"?r[i]+"/12":F.format(r[i]);if(e.hasAttribute("data-hz")){var hd=r[i]===0||r[i]==="";e.style.display=hd?"none":"";e.previousElementSibling.style.display=hd?"none":""}});share()}
 Array.prototype.forEach.call(document.querySelectorAll("input,select"),function(e){e.addEventListener("input",run);e.addEventListener("change",run)});run();var pb=document.getElementById("pr");if(pb)pb.addEventListener("click",function(){window.print()});
 })();
