@@ -30,6 +30,7 @@ dt:has(+dd#o-cmp){grid-column:1/-1;color:var(--ink);font-weight:800;border-top:1
 .t table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:15px}.t th,.t td{padding:9px 10px;border-bottom:1.5px solid var(--ln);text-align:right}.t th:first-child,.t td:first-child{text-align:left}.t th{background:var(--sf)}
 footer{border-top:1.5px solid var(--ln);margin-top:36px;padding:20px 0 30px;font-size:14px;color:var(--mut)}
 @media(max-width:760px){.g,.cards{grid-template-columns:1fr}}
+.upd{font-size:13px;color:var(--mut);margin:-4px 0 12px}.lead2{padding:12px 14px;border-left:4px solid var(--sun);background:rgba(255,212,0,.12);border-radius:8px}
 .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .btn{font:inherit;font-size:14px;font-weight:700;padding:9px 14px;border-radius:10px;border:1.5px solid var(--ink);background:var(--sun);color:#111;text-decoration:none;cursor:pointer;display:inline-block}
 .btn.alt{background:transparent;color:var(--ink)}.btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
@@ -72,7 +73,7 @@ header{position:sticky;top:0;z-index:30;background:var(--bg);margin:0 -20px;padd
 .mb summary i{width:16px;height:12px;display:inline-block;background:linear-gradient(#111 0 0) 0 0/100% 2px no-repeat,linear-gradient(#111 0 0) 0 50%/100% 2px no-repeat,linear-gradient(#111 0 0) 0 100%/100% 2px no-repeat}
 .mb details[open] summary{box-shadow:3px 3px 0 var(--ink)}
 .mp{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 40px));max-height:75vh;overflow:auto;background:var(--sf);border:1.5px solid var(--ink);border-radius:14px;padding:10px;box-shadow:6px 6px 0 var(--sun)}
-.mp h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:10px 8px 4px}
+.mp .mh{font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:10px 8px 4px}
 .mp a{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
 .mp a:hover,.mp a[aria-current]{background:var(--sun);color:#111}
 .mp .mi{width:28px;height:28px;border-radius:8px;background:var(--sun);color:#111;display:grid;place-items:center;flex:none}.mp a:hover .mi,.mp a[aria-current] .mi{background:#111;color:var(--sun)}.mp .mi svg{width:16px;height:16px;stroke-width:2}
