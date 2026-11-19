@@ -12,9 +12,9 @@ const PREMIO_FONTE = "";
 
 // 3) LINKS DE AFILIADO DA AMAZON (SiteStripe → "Texto"). Deixe "" para não mostrar o link.
 const AMAZON = {
-  celular: "https://link.amazon/B08LNfVVI",
-  notebook: "https://link.amazon/B0212eEas",
-  tv: "https://link.amazon/B0aHeiJgw",
+  celular: "",
+  notebook: "",
+  tv: "",
   livros: ""
 };
 
